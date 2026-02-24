@@ -1,6 +1,6 @@
-# VAP Cluster Deployment with OpenStack Heat
+# Virtuozzo Application Management Cluster Deployment with OpenStack Heat
 
-Heat is the orchestration service in OpenStack, which allows users to create and manage cloud resources using templates. This repository contains Heat templates for the automated deployment of a VAP (Virtuozzo Application Platform) cluster.
+Heat is the orchestration service in OpenStack, which allows users to create and manage cloud resources using templates. This repository contains Heat templates for the automated deployment of a Virtuozzo Application Management cluster.
 
 > Read [Installation Prerequisites](https://github.com/virtuozzo/vap-installer-on-vhi/tree/master?tab=readme-ov-file#installation-prerequisites) before deploying.
 
@@ -15,7 +15,7 @@ If you haven't before, install the OpenStack CLI and Heat client:
 pip install python-openstackclient python-heatclient
 ```
 
-2\. Create the `project.sh` OpenStack source file with VAP project configurations. Use the following example as a template:
+2\. Create the `project.sh` OpenStack source file with Virtuozzo Application Management project configurations. Use the following example as a template:
 
 ```bash
 #!/bin/bash
@@ -44,7 +44,7 @@ openstack stack list
 
 ## Template Parameters
 
-The `VAP.yaml` OpenStack Heat template is used to deploy a VAP cluster. It uses a set of parameters that should be provided during the deployment:
+The `VAP.yaml` OpenStack Heat template is used to deploy a Virtuozzo Application Management cluster. It uses a set of parameters that should be provided during the deployment:
 
 - **Required Parameters**
   - `infra_flavor`: Flavor name for infrastructure nodes
@@ -77,7 +77,7 @@ These parameters can be specified in a separate file (e.g., `params.yaml`) or pa
 
 ## Deployment Examples
 
-For basic deployment, only the required parameters are needed. For example, to deploy a VAP cluster with 4 user nodes:
+For basic deployment, only the required parameters are needed. For example, to deploy a Virtuozzo Application Management cluster with 4 user nodes:
 
 ```bash
 openstack stack create -t VAP.yaml -e params.yaml my-vap-cluster

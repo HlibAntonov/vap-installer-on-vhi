@@ -1,9 +1,9 @@
 type: install 
-name: VAP Installer 
+name: Virtuozzo Application Management Installer 
 id: vap-installer
 targetEditions: any 
 logo: /images/logo-small.png
-description: Get your PaaS installed in a minutes on top of any publicly accessible VHI cluster or in Virtuozzo Hybrid Cloud in automatic mode. After application installation open VAP Installer Add-On, provide credentials, endpoint and create infrastructure for Virtuozzo Application Platform. Then proceed to the Webinstaller URL to deploy new VAP installation. Make sure that you have a valid VAP license before installation.
+description: Get your PaaS installed in a minutes on top of any publicly accessible VHI cluster or in Virtuozzo Hybrid Cloud in automatic mode. After application installation open Virtuozzo Application Management Installer Add-On, provide credentials, endpoint and create infrastructure for Virtuozzo Application Management. Then proceed to the Webinstaller URL to deploy new Virtuozzo Application Management installation. Make sure that you have a valid Virtuozzo Application Management license before installation.
 baseUrl: https://raw.githubusercontent.com/virtuozzo/vap-installer-on-vhi/8.14-3
 
 settings:
@@ -17,7 +17,7 @@ settings:
   - type: string
     name: displayName
     caption: Display Name
-    default: VAP Installer
+    default: Virtuozzo Application Management Installer
 
   - caption: Region
     type: regionlist

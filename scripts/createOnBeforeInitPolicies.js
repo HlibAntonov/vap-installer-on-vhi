@@ -13,7 +13,7 @@ var userFlavorList = getJsonFromFile("userFlavors.json");
 if (userFlavorList == "{}") { showMarkup = true; markup += "RAM&CPU user flavors, "; }
 var userFlavorListPrepared = prepareFlavorsList(JSON.parse(userFlavorList));
 var imagesList = getJsonFromFile("images.json");
-if (imagesList == "{}") { showMarkup = true; markup += "VAP image names, "; }
+if (imagesList == "{}") { showMarkup = true; markup += "Virtuozzo Application Management image names, "; }
 var imageListPrepared = prepareImageList(JSON.parse(imagesList));
 var subnetsList = getJsonFromFile("subnets.json");
 if (subnetsList == "{}") { showMarkup = true; markup += "VHI public subnets, "; }
@@ -30,9 +30,9 @@ resp = api.env.control.ExecCmdById('${env.envName}', session, '${nodes.cp.master
 }]), true);
 if (resp.result != 0) return resp;
 if (resp.responses[0].out != "Stack not found") {
-    var markup2 = "VAP Project Name "  + vapStackName + " is already taken. Please choose another one.";
+    var markup2 = "Virtuozzo Application Management Project Name "  + vapStackName + " is already taken. Please choose another one.";
 }
-if (vapStackName == "") { showMarkup = true; markup += "VAP project name, "; }
+if (vapStackName == "") { showMarkup = true; markup += "Virtuozzo Application Management project name, "; }
 resp = api.env.control.ExecCmdById('${env.envName}', session, '${nodes.cp.master.id}', toJSON([{
     command: '[ -f /var/www/webroot/.vapenv ] && source /var/www/webroot/.vapenv; echo $VAP_SSH_KEY_NAME'
 }]), true);
@@ -193,7 +193,7 @@ settings.fields.push(
   },
   {
      "name": "vap_platform_data_storage_policy",
-     "caption": "Storage Policy: VAP Platform Data",
+     "caption": "Storage Policy: Virtuozzo Application Management Platform Data",
      "type": "list",
      "required": true,
      "values": storagePoliciesListPrepared,

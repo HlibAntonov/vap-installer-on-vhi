@@ -1,9 +1,9 @@
 type: update 
-name: VAP Installer Add-On
+name: Virtuozzo Application Management Installer Add-On
 id: vap-installer-addon 
 targetEditions: any 
 logo: /images/logo-small.png
-description: Provision VHI infrastructure and deploy a new VAP on it
+description: Provision VHI infrastructure and deploy a new Virtuozzo Application Management instance on it
 
 targetNodes:
   nodeType:
@@ -57,29 +57,29 @@ settings:
         
       - type: string 
         name: vap_stack_name 
-        caption: VAP Project Domain 
-        tooltip: "<span>Come up with VAP Project Domain Name</span>"
+        caption: Virtuozzo Application Management Project Domain 
+        tooltip: "<span>Come up with Virtuozzo Application Management Project Domain Name</span>"
         required: true
         
     onBeforeInit: configureOnBeforeInit.js  
       
   create:
     fields:
-     - caption: VAP Project Name
+     - caption: Virtuozzo Application Management Project Name
        type: string
        tooltip:
-         text: VAP Project Name
+         text: Virtuozzo Application Management Project Name
          minWidth: 130
        name: vap_stack_name
        required: true
        value: vapStackName
      - name: image_name
-       caption: VAP Image Name
+       caption: Virtuozzo Application Management Image Name
        type: list
        required: true
        values: imageListPrepared
        tooltip: 
-         text: "Select required <b>qcow2</b> VAP image name"
+         text: "Select required <b>qcow2</b> Virtuozzo Application Management image name"
          tipParams:
          minWidth: 280
      - name: install_cmp
@@ -373,21 +373,21 @@ buttons:
   submitButtonText: Configure
   successText: Configured successfully.
   
-- caption: New VAP
+- caption: New Virtuozzo Application Management
   action: create
-  loadingText: Creating VAP...
+  loadingText: Creating Virtuozzo Application Management...
   logsPath: /var/log/installer.log
-  successText: The VAP have been successfully created.
-  title: New VAP
+  successText: Virtuozzo Application Management has been successfully created.
+  title: New Virtuozzo Application Management
   settings: create
-  submitButtonText: New VAP
-  confirmText: Create New VAP?
+  submitButtonText: New Virtuozzo Application Management
+  confirmText: Create New Virtuozzo Application Management?
 
 responses:
   99:
     type: warning
     message: |
-      Errors were discovered during the VAP creating.
+      Errors were discovered during Virtuozzo Application Management creation.
       Please check the **/var/log/installer.log** log file for details. 
 
 onInstall:
@@ -395,7 +395,7 @@ onInstall:
   - setGlobals:
       baseUrl: ${response.baseUrl}  
   - cmd[cp]: |-
-      echo "VAP installer add-on logs" > /var/log/installer.log;
+      echo "Virtuozzo Application Management installer add-on logs" > /var/log/installer.log;
       chown jelastic /var/log/installer.log;
     user: root
 

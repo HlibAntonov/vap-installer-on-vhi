@@ -1,6 +1,6 @@
 heat_template_version: 2013-05-23
 description: >
-    Template to deploy a VAP cluster
+    Template to deploy a Virtuozzo Application Management cluster
 
 parameters:
 
